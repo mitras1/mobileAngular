@@ -1,0 +1,24 @@
+<div class="scrollable" ui-shared-state="searchBar" ng-controller="InstantSearchController">
+<input
+    type="search"
+	ng-model="searchString"
+    class="form-control scrollable-header"
+    placeholder="Search.." />
+
+  <div class="scrollable-content" ui-scroll-bottom="bottomReached()">
+    <div class="list-group">
+	  <ul class="list-group-item">
+				<!-- Render a li element for every entry in the items array. Notice
+					 the custom search filter "searchFor". It takes the value of the
+					 searchString model as an argument.
+				 -->
+				<li ng-repeat="i in items | searchFor:searchString">
+					<a href="#/show/{{i.login}}"><img ng-src="{{i.avatar_url}}" />
+					<p>{{i.login}} <i class="fa fa-chevron-right pull-right"></i></p>
+					</a>
+				</li>
+			</ul>
+    </div>
+  </div>
+
+</div>

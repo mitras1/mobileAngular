@@ -1,0 +1,63 @@
+<div class="scrollable" ng-controller="ShowUserController">
+  <div class="scrollable-content">
+
+    <div class="list-group text-center">
+      <div class="list-group-item list-group-item-home profile">
+	  <img ng-src="{{userdata.avatar_url}}" />
+        <h1><small> {{ userdata.name }}</small>
+        </h1>
+      </div>
+      <div class="list-group-item list-group-item-home">
+        <div>
+          <i class="fa fa-user feature-icon text-primary"></i>
+        </div>
+        <div class="followers">
+            <h3 class="home-heading">Followers</h3>
+            
+			<img src ng-repeat="i in items" ng-src="{{i.avatar_url}}" />
+						
+        </div>
+		
+      </div>
+
+
+      <div class="list-group-item list-group-item-home">
+        <div>
+          <i class="fa fa-comment feature-icon  text-primary"></i>
+        </div>
+        <div>
+            <h3 class="home-heading">Blog</h3>
+            {{userdata.blog}}
+        </div>
+      </div>
+
+
+      <div class="list-group-item list-group-item-home">
+        <div>
+          <i class="fa fa-map-marker feature-icon  text-primary"></i>
+        </div>
+        <div>
+            <h3 class="home-heading">Location</h3>
+            {{userdata.location}}
+        </div>
+      </div>
+
+      <div class="list-group-item list-group-item-home">
+        <div>
+          <i class="fa fa-user feature-icon  text-primary"></i>
+        </div>
+        <div>
+            <h3 class="home-heading">Public Repos</h3>
+            <p>{{userdata.public_repos}}<br>
+            </p>
+
+            <p>
+              Email: {{userdata.email}}
+            </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
